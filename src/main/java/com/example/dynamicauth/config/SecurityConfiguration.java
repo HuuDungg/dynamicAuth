@@ -45,7 +45,7 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests(authz -> authz
                         .requestMatchers("/user/login").permitAll()
                         .requestMatchers("/user/resgister").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt.jwtAuthenticationConverter(this.jwtAuthenticationConverter()))
